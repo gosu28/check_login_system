@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_check_login_fail,check.login.fail,model_check_login_fail,,1,1,1,1
+access_black_list,black_list,model_black_list,,1,1,1,1

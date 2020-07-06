@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="notify_error_login">
+            <div class="page">
+                <html>
+                    <style>
+                        a {
+                            font-weight: 500;
+                            color: white;
+                            border: 1px solid;
+                            padding: 10px 15px;
+                            border-radius: 7px;
+                            text-decoration: none;
+                            background-color: #337ab7;
+                        }
+                        a:hover {
+                            cursor: pointer;
+                            background-color: #286090;
+                        }
+                    </style>
+                    <head>
+                        <title>OOPS! Error</title>
+                    </head>
+                    <body>
+                        <center style="padding:75px">
+                            <h1>You don't have access permission to the system!</h1>
+                            <h3>
+                                Perhaps you tried the wrong password too many times.
+                                Please contact the administrator to unlock.
+                            </h3>
+                            <div style='padding-top:50px;'>
+                                <a href="http://localhost:8069/web/login" type="button">Go back</a>
+                            </div>
+                        </center>
+                    </body>
+                </html>
+            </div>
+        </template>
+    </data>
+</odoo>

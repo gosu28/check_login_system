@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="black_list_view_tree" model="ir.ui.view">
+            <field name="name">list.view.tree</field>
+            <field name="model">black.list</field>
+            <field name="arch" type="xml">
+                <tree create="false">
+                    <field name="ip_address"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="black_list_view_form" model="ir.ui.view">
+            <field name="name">list.view.form</field>
+            <field name="model">black.list</field>
+            <field name="arch" type="xml">
+                <form create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <field name="ip_address"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="black_list_action" model="ir.actions.act_window">
+            <field name="name">Black List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">black.list</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="black_list_menu"
+                  name="Black List"
+                  parent="check_login_root"
+                  action="black_list_action"
+                  sequence="1"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="check_login_fail_view_tree" model="ir.ui.view">
+            <field name="name">login.fail.view.tree</field>
+            <field name="model">check.login.fail</field>
+            <field name="arch" type="xml">
+                <tree create="1">
+                    <field name="name"/>
+                    <field name="ip_address"/>
+                    <field name="create_date"/>
+                    <field name="count"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="check_login_fail_view_form" model="ir.ui.view">
+            <field name="name">login.fail.view.form</field>
+            <field name="model">check.login.fail</field>
+            <field name="arch" type="xml">
+                <form create="1" edit="1">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="ip_address"/>
+                            </group>
+                            <group>
+                                <field name="count"/>
+                                <field name="state"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="check_login_fail_actions" model="ir.actions.act_window">
+            <field name="name">IP Address Login Fail List</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">check.login.fail</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="check_login_root"
+                  name="IP Address Management"
+                  parent="base.menu_administration"
+                  sequence="20"/>
+        <menuitem id="check_login_category"
+                  name="IP Address Login Fail List"
+                  parent="check_login_root"
+                  action="check_login_fail_actions"
+                  sequence="2"/>
+    </data>
+</odoo>
